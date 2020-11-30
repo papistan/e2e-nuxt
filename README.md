@@ -17,4 +17,8 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Run Tests 
+```bash
+# run TestCafe tests
+$ npm run testcafe:e2e
+
