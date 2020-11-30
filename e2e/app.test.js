@@ -17,3 +17,4 @@ test('Check title text', async (t) => {
   // assertion to check if the only h1 tag on the page contains the required text
   await t.expect(title).contains('nuxt-test');
 })
+
