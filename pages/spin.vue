@@ -1,6 +1,7 @@
 <template>
   <section>
-    <h1 class="p-1 m-2 w-40 text-5xl">{{ spinResult() }}</h1>
+      <!-- v-html allows referenced code to compile to hmtl -->
+    <span v-html="spinResult()"></span>
     <button
       v-on:click="spin"
       class="bg-blue-600 text-white text-2xl p-1 m-2 w-40"
@@ -22,9 +23,9 @@ export default {
   methods: {
     spinResult() {
       if (this.status > 0.5) {
-        return this.yes
+        return `<h1 class="p-1 m-2 w-40 text-5xl"> ${this.yes}</h1>`
       } else {
-        return this.no
+        return `<h1 class="p-1 m-2 w-40 text-5xl"> ${this.no}</h1>`
       }
     },
     spin() {
