@@ -1,24 +1,27 @@
 <template>
-  <div class="flex flex-col">
-    <label for="goal">Goal</label>
-      <input
-        class="border border-gray-50 m-2"
-        type="text"
-        placeholder="Add Goal"
-        v-model="enteredValue"
-      />
+  <section class="p-3 flex flex-col">
+    <label class="m-2" for="goal">Goal</label>
+    <input
+      class="border border-gray-50 m-2 w-80"
+      type="text"
+      placeholder="Add Goal"
+      v-model="enteredValue"
+    />
     <button
-      class="bg-purple-600 text-white text-2xl p-1 w-40"
+      class="bg-purple-600 text-white text-2xl p-1 m-2 w-40"
       v-on:click="addGoal"
     >
       Add Goal
     </button>
-    <div>
-      <ul>
+    <div class="m-5">
+      <ul class="list-disc m-2">
         <li v-for="goal in goals" v-bind:key="goal">{{ goal }}</li>
       </ul>
     </div>
-  </div>
+    <h3 class="m-5">
+      Take me <a class="underline" v-bind:href="home">home</a>
+    </h3>
+  </section>
 </template>
 
 <script>
@@ -27,6 +30,7 @@ export default {
     return {
       goals: [],
       enteredValue: '',
+      home: '/',
     }
   },
   methods: {
@@ -34,6 +38,7 @@ export default {
       this.goals.push(this.enteredValue)
       this.enteredValue = ''
     },
+
   },
 }
 </script>
