@@ -9,7 +9,7 @@ fixture `Testing testcafe`
 
 test('Test homepage URL', async t => {
     // assertion to check if url is what it should be
-    await t.expect('http://localhost:3000/').match(/http:\/\/localhost:3000/);
+    await t.expect(origin).match(/http:\/\/localhost:3000/);
 });
 
 test('Check title text', async (t) => {
@@ -18,14 +18,27 @@ test('Check title text', async (t) => {
   await t.expect(title).contains('nuxt-test');
 });
 
-fixture `Testing Name and Age calulator`
-    .page `http://localhost:3000/age`
+fixture `Testing Name and Age calculator`
+    .page `${origin}age`
 
 test('Test Age calculator', async t => {
     const ageInput = Selector('input').withAttribute('placeholder', 'Add Age')
     await t
     .click(ageInput)
     .typeText(ageInput, '100', { replace: true })
-    .wait(5000)
+    .wait(100)
     .expect(Selector('#age-text').innerText).contains('105');
+});
+
+fixture `Testing Name and Age calulator`
+    .page `${origin}events`
+
+test('Color input displays', async t => {
+    const colorInput = Selector('input').withAttribute('placeholder', 'enter favorite color')
+    await t
+    .click(colorInput)
+    .typeText(colorInput, 'purple', { replace: true })
+    .pressKey('enter')
+    .wait(100)
+    .expect(Selector('h1').innerText).contains('purple');
 });
