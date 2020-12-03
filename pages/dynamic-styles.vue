@@ -1,6 +1,6 @@
 <template>
   <div class="p-1 m-2 flex flex-col">
-      <div class="p-1 m-2 w-40 h-40" :style="{ backgroundColor: `${selectedColor}`}"></div>
+      <div class="p-1 m-2 w-40 h-40" :style="{ backgroundColor: selectedColor }"></div>
     <div>
       <button
         class="bg-purple-600 text-white text-2xl p-1 m-2 w-40"
