@@ -92,3 +92,6 @@ sw.*
 # cypress
 cypress/videos
 cypress/screenshots
+
+# webpackmonitor
+.monitor
