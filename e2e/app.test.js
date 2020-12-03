@@ -30,7 +30,7 @@ test('Test Age calculator', async t => {
     .expect(Selector('#age-text').innerText).contains('105');
 });
 
-fixture `Testing Name and Age calulator`
+fixture `Testing Color input`
     .page `${origin}events`
 
 test('Color input displays', async t => {
