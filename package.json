@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "testcafe:e2e": "testcafe chrome e2e/app.test.js -e -q --debug-on-fail",
+    "testcafe:e2e": "testcafe chrome:headless e2e/app.test.js",
     "cypress:e2e": "nuxt & cypress run",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.1.0",
     "cypress": "^6.0.1",
+    "cypress-axe": "^0.12.0",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
